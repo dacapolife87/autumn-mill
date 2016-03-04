@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "category": "행사떡",
+        "list":
+            {
+                "dduk":
+                    [
+                        { "id": "1001", "name": "dduk1_1" ,"price":3000,"picture": "http://placehold.it/32x32","about": "Bisba"},
+                        { "id": "1002", "name": "dduk1_2","price":3000,"picture": "http://placehold.it/32x32","about": "Bisba" },
+                        { "id": "1003", "name": "dduk1_3","price":3000,"picture": "http://placehold.it/32x32","about": "Bisba" },
+                        { "id": "1004", "name": "dduk1_4","price":3000,"picture": "http://placehold.it/32x32","about": "Bisba" }
+                    ]
+            }
+    },
+    {
+        "id": "2",
+        "category": "간식떡",
+        "list":
+            {
+                "dduk":
+                    [
+                        { "id": "1001", "name": "dduk2_1" ,"price":3000,"picture": "http://placehold.it/32x32","about": "Bisba"},
+                        { "id": "1002", "name": "dduk2_2","price":3000,"picture": "http://placehold.it/32x32","about": "Bisba" },
+                        { "id": "1003", "name": "dduk2_3","price":3000,"picture": "http://placehold.it/32x32","about": "Bisba" },
+                        { "id": "1004", "name": "dduk2_4","price":3000,"picture": "http://placehold.it/32x32","about": "Bisba" }
+                    ]
+            }
+    }
+]

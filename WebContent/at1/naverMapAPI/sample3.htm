@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_US" xml:lang="en_US">
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+		<title>OpenAPI Map Test - 이벤트 등록</title>
+		<!-- prevent IE6 flickering -->
+		<script type="text/javascript">
+			try {document.execCommand('BackgroundImageCache', false, true);} catch(e) {}
+		</script>
+
+<script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=f32441ebcd3cc9de474f8081df1e54e3"></script>
+ </head>
+<body>
+<div id = "testMap" style="border:1px solid #000; width:500px; height:400px; margin:20px;"></div>
+ <button onclick="javascript:addClickEvent();">클릭 이벤트 추가</button>
+ <button onclick="javascript:removeClickEvent();">클릭 이벤트 해제</button>
+ <script type="text/javascript">
+			var oPoint = new nhn.api.map.LatLng(37.5010226, 127.0396037);
+			nhn.api.map.setDefaultPoint('LatLng');
+			oMap = new nhn.api.map.Map('testMap', {
+						point : oPoint,
+						zoom : 10, // - 초기 줌 레벨은 10으로 둔다.
+						enableWheelZoom : false,
+						enableDragPan : true,
+						enableDblClickZoom : false,
+						mapMode : 0,
+						activateTrafficMap : false,
+						activateBicycleMap : false,
+						minMaxLevel : [ 1, 14 ],
+						size : new nhn.api.map.Size(500, 400)
+			});
+			
+			var eventFlag = false; // - 동일한 이벤트가 무한정 추가되는 것을 막기 위한 flag.
+			
+			var clickEvent = function(pos){ // - 클릭 이벤트 핸들러
+				alert(pos.point.getX() + " , " + pos.point.getY()); // - 마우스를 클릭했을때의 좌표를 alert 창으로 알려줌.
+			};
+			
+			function addClickEvent(){
+				if(!eventFlag){
+					oMap.attach("click",clickEvent); // - 이벤트 추가. 지도에서의 이벤트 추가는 attach를 통해 이루어진다.
+					eventFlag = true;
+				}
+			}
+			
+			function removeClickEvent(){
+				oMap.detach("click", clickEvent); // - 이벤트 해제. 지도에서의 이벤트 해제는 detach를 통해 이루어진다.
+				eventFlag = false;
+			}
+			
+</script>
+</body>
+</html>

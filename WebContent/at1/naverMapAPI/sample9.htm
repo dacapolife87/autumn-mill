@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_US" xml:lang="en_US">
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+		<title>OpenAPI 2.0 - test circle</title>
+		<!-- prevent IE6 flickering -->
+		<script type="text/javascript">
+			try {document.execCommand('BackgroundImageCache', false, true);} catch(e) {}
+		</script>
+<script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=f32441ebcd3cc9de474f8081df1e54e3"></script>     
+
+</head>
+<body>
+<div id = "testMap" style="border:1px solid #000; width:500px; height:400px; margin:20px;"></div>
+
+		<script type="text/javascript">
+			var oPoint = new nhn.api.map.LatLng(37.5010226, 127.0396037); // -  지도의 중심점을 나타내는 변수 선언
+			nhn.api.map.setDefaultPoint('LatLng'); // - 지도에서 기본적으로 사용하는 좌표계를 설정합니다.
+			oMap = new nhn.api.map.Map('testMap' ,{
+						point : oPoint, // - 지도의 중심점을 나타냅니다.
+						zoom : 8, // - 지도의 초기 레벨을 나타냅니다.
+						enableWheelZoom : true, // - 마우스 휠 줌으로 지도의 레벨을 조정할 수 있는지 없는지 설정합니다. 
+						enableDragPan : true, // - 마우스 드래그를 통해 지도를 패닝할 수 있는지 없는지 설정합니다.
+						enableDblClickZoom : false, // - 마우스 왼쪽 버튼 더블클릭을 통해, 
+						mapMode : 0, // - 어떤 지도를 사용할 지 나타냅니다. 0은 일반, 1은 겹침지도, 2는 위성지도입니다.
+						activateTrafficMap : false, // - 실시간 교통 지도를 사용할지 하지 않을 지의 여부를 나타냅니다.
+						activateBicycleMap : false, // - 자전거 지도를 사용할 지 하지 않을 지의 여부를 나타냅니다.
+						minMaxLevel : [ 1, 14 ], // - 지도의 최대 최소 레벨을 설정합니다. 
+						size : new nhn.api.map.Size(500, 400), // - 지도의 크기를 설정합니다.
+						detectCoveredMarker : true
+					});
+			var circle = new nhn.api.map.Circle({
+				strokeColor : "red",
+				strokeOpacity : 1,
+				strokeWidth : 1,
+				fillColor : "blue",
+				fillOpacity : 0.5
+			});
+			var radius = 200; // - radius의 단위는 meter
+			circle.setCenterPoint(oPoint); // - circle 의 중심점을 지정한다.
+			circle.setRadius(radius); // - circle 의 반지름을 지정하며 단위는 meter이다.
+			circle.setStyle("strokeColor", "blue"); // - 선의 색깔을 지정함.
+			circle.setStyle("strokeWidth", 5); // - 선의 두께를 지정함.
+			circle.setStyle("strokeOpacity", 1); // - 선의 투명도를 지정함.
+			circle.setStyle("fillColor", "none"); // - 채우기 색상. none 이면 투명하게 된다.
+			oMap.addOverlay(circle);
+			
+
+		</script>
+</body>
+</html>

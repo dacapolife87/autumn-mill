@@ -1,0 +1,242 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <style type="text/css"></style>
+  <style>
+      html, body {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+      #map-canvas{ height:100%;}
+  </style>
+  <script>
+  $(document).ready(function(){
+    $('#type1').click(function() {
+      /*type1 클릭이벤트*/
+    });
+    $('#type2').click(function() {
+      /*type2 클릭이벤트*/
+    });
+    $('#type3').click(function() {
+      /*type3 클릭이벤트*/
+    });
+  });
+  </script>
+
+
+
+  <!-- JQuery Mobile을 사용하기 위해 반드시 필요한 태그-->
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+  </head>
+<body>
+<div data-role="page">
+  <div data-role="header" data-theme="d">
+    <a href="main.html" data-icon="home" data-iconpos="notext" data-theme="d"></a>
+    <h1>가을방아</h1>
+    <div data-role="navbar" data-theme="d">
+      <ul>
+        <li>
+          <a href="intro.html">가을방아</a>
+        </li>
+        <li>
+          <a href="menu.html" rel="external">메뉴판</a>
+        </li>
+        <li>
+          <a href="where.html" class="ui-btn-active ui-state-persist" >오시는길</a>
+        </li>
+        <li>
+          <a href="info.html">구입정보</a>
+        </li>
+      </ul>
+    </div>  
+  </div>
+  <!--헤더끝 컨텐트시작-->
+  <div data-role="content">
+    <ul data-role="listview" data-inset="true" data-divider-theme="d">
+      <li data-role="list-divider">지하철&nbsp :&nbsp 
+      2호선, 6호선
+      </li>
+        <li>
+        <a href="#popupDialog1" data-rel="popup" data-position-to="window" data-inline="true" data-transition="pop" data-icon="delete" data-theme="e">합정역</a>
+        
+          <div id="popupDialog1" data-role="popup" data-theme="none" data-shadow="false">
+              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+            <img  src="http://maps.google.com/maps/api/staticmap?
+              center=37.548405,126.916046
+              &zoom=16  
+              &size=300x300
+              &markers=icon:http://maps.google.com/mapfiles/kml/pal2/icon1.png|37.548128,126.918691
+              &markers=icon:http://maps.google.com/mapfiles/kml/pal2/icon32.png|37.548903,126.9141
+              &path=color:0x0000ff|weight:5
+              |37.548128,126.918691
+              |37.548142,126.918547|37.547893,126.918375
+              |37.548814,126.914059|37.548903,126.9141
+              &sensor=false"
+              width=300px
+              height=300px
+               class="popphoto"
+              style="position:absolute;z-index:2"
+              >
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          </div>
+        </li>
+        <li>
+        <a href="#popupDialog2" data-rel="popup" data-position-to="window" data-inline="true" data-transition="pop" data-icon="delete" data-theme="b">상수역</a>
+        
+          <div id="popupDialog2" data-role="popup" data-theme="none" data-shadow="false">
+              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+            <img style="position:absolute;z-index:2"
+src="http://maps.google.com/maps/api/staticmap?
+center=37.547776,126.920723
+&zoom=16
+&size=400x400
+&markers=icon:http://maps.google.com/mapfiles/kml/pal2/icon1.png|37.548128,126.918691
+&markers=icon:http://maps.google.com/mapfiles/kml/pal2/icon32.png|37.547767,126.922708
+&path=color:0x0000ff|weight:5
+|37.548128,126.918691
+|37.548142,126.918547|37.547893,126.918375
+|37.547767,126.922708
+&sensor=false">
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          </div>
+        </li>
+
+      <li data-role="list-divider">버스&nbsp:&nbsp7011, 7013A, 7013B </li>
+        <li>
+        <a href="#popupDialog3" data-rel="popup" data-position-to="window" data-inline="true" data-transition="pop" data-icon="delete" data-theme="b">상수역</a>
+        
+          <div id="popupDialog3" data-role="popup" data-theme="none" data-shadow="false">
+              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+            <img style="position:absolute;z-index:2"
+src="http://maps.google.com/maps/api/staticmap?
+center=37.547869,126.920058
+&zoom=16
+&size=400x400
+&markers=icon:http://maps.google.com/mapfiles/kml/pal2/icon1.png|37.548128,126.918691
+&markers=icon:http://maps.google.com/mapfiles/kml/pal2/icon32.png|37.547761,126.921621
+&path=color:0x0000ff|weight:5
+|37.548128,126.918691
+|37.548142,126.918547|37.547893,126.918375
+|37.547761,126.921621
+&sensor=false">
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          </div>
+        </li>
+        <li>
+        <a href="#popupDialog4" data-rel="popup" data-position-to="window" data-inline="true" data-transition="pop" data-icon="delete" data-theme="b">서울화력발전소</a>
+        
+          <div id="popupDialog4" data-role="popup" data-theme="none" data-shadow="false">
+              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+            <img style="position:absolute;z-index:2"
+src="http://maps.google.com/maps/api/staticmap?
+center=37.548103,126.918123
+&zoom=18
+&size=400x400
+&markers=icon:http://maps.google.com/mapfiles/kml/pal2/icon1.png|37.548128,126.918691
+&markers=icon:http://maps.google.com/mapfiles/kml/pal2/icon32.png|37.548105,126.917321
+&path=color:0x0000ff|weight:5
+|37.548128,126.918691
+|37.548142,126.918547
+|37.547893,126.918375
+|37.548105,126.917321
+&sensor=false">
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          </div>
+        </li>
+         <li data-role="list-divider">버스&nbsp:&nbsp마포07</li>
+        <li>
+        <a href="#popupDialog5" data-rel="popup" data-position-to="window" data-inline="true" data-transition="pop" data-icon="delete" data-theme="b">로데오거리</a>
+        
+          <div id="popupDialog5" data-role="popup" data-theme="none" data-shadow="false">
+              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+            <img style="position:absolute;z-index:2"
+src="http://maps.google.com/maps/api/staticmap?
+center=37.547878,126.919307
+&zoom=17
+&size=400x400
+&markers=icon:http://maps.google.com/mapfiles/kml/pal2/icon1.png|37.548128,126.918691
+&markers=icon:http://maps.google.com/mapfiles/kml/pal2/icon32.png|37.547844,126.920032
+&path=color:0x0000ff|weight:5
+|37.548128,126.918691
+|37.548142,126.918547|37.547893,126.918375
+|37.547844,126.920032
+&sensor=false">
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          </div>
+        </li>
+        <li>
+        <a href="#popupDialog6" data-rel="popup" data-position-to="window" data-inline="true" data-transition="pop" data-icon="delete" data-theme="b">합정동</a>
+        
+          <div id="popupDialog6" data-role="popup" data-theme="none" data-shadow="false">
+              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+            <img style="position:absolute;z-index:2"
+src="http://maps.google.com/maps/api/staticmap?
+center=37.548128, 126.918691
+&zoom=1
+&size=400x400
+&markers=icon:http://maps.google.com/mapfiles/kml/pal2/icon1.png|37.548128,126.918691
+&markers=icon:http://maps.google.com/mapfiles/kml/pal2/icon32.png|37.547767,126.918289
+&path=color:0x0000ff|weight:5
+|37.548128,126.918691
+|37.548142,126.918547
+|37.547893,126.918375
+|37.547767,126.918289
+&sensor=false">
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          </div>
+        </li>
+        </li>
+    </ul>
+  </div>
+  <!--컨텐트끝 푸터시작-->
+  <div data-role="footer" data-position="fixed" data-theme="d">@가을방아</div>
+</div>
+</body>
+</html>

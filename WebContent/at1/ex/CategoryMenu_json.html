@@ -1,0 +1,126 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+	<style type="text/css">
+	#float_style {
+		float: left;
+	}
+	#clear_style {
+        clear: left;
+    }
+	</style>
+
+
+
+
+	<script>
+	$.getJSON('data2.json',function(data){
+
+	items = [];
+	item = '<div data-role="collapsible" data-mini="true" class="ui-collapsible ui-collapsible-inset ui-first-child">';
+	$.each(data, function(index, val) {
+       /* 카테고리 분류 */
+       item += '<h3 id="clear_style" class="ui-collapsible-heading"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-mini ui-btn-icon-right ui-btn-up-c" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-icon="arrow-l" data-iconpos="right" data-theme="c" data-mini="true">';
+       item += val['category'];
+       item += '</a></h3>';
+       item +='<ul data-role="listview" data-inset="false">';
+       list = "";
+       console.log(val['category']);
+	       $.each(val['list'] , function(index, val) {
+	         /* 세부카테고리 메뉴리스트 */
+		         $.each(this, function(index, val){
+		          list += "<div id='float_style'>";
+		          list += '<a href="menupopup.html" data-rel="dialog">';
+		          list += "<img src=";
+		          list += val.picture;
+		          list += ">";
+		          list += "<br>";
+		          list += val.name;
+		          list += "</a>";
+		          list += "</div>";
+		         });
+
+	       });
+       item += list;
+       console.log(item);
+       item+='</ul>';
+    });
+    item += "</div>";
+    items.push(item);
+	$("#test1").append(items);
+	});
+
+
+	
+
+/*
+	$.getJSON('data2.json', function(data) {
+		var items=[];
+		
+		$.each(data,function(index,val){
+			//var lival ="<li><a href='menupopup.html' data-rel='dialog'>"+val.name+"</a></li>";
+			if(val.category==1){
+
+			}
+			item = '<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child ui-btn-up-c">';
+			item += '<div class="ui-btn-inner ui-li">' ;
+			item += 	'<div class="ui-btn-text">';
+			item += '<a href="menupopup.html" data-rel="dialog" class="ui-link-inherit">';	
+			item += val.name;
+			item += '</a></div></div></li>';
+			items.push(item);
+			//$("#test").append(lival);
+		});
+		console.log(data);
+		$("#test").append(items);
+		//$("#test1").append('</ul>
+		//	 </div>');
+	});*/
+	</script>
+
+
+</head>
+<body>
+<div data-role="page">
+	<div data-role="header" data-theme="a"  data-position="fixed">
+		<a href="main.html" data-icon="home" data-iconpos="notext" data-theme="b">    
+	    </a><h1>가을방아</h1>
+	    <a href="#" data-icon="grid">SiteMap</a>
+
+		<div data-role="navbar">
+		<ul>
+			<li><a href="intro.html">가을방아</a></li>
+			<li><a href="menu.html" class="ui-btn-active ui-state-persist" >메뉴판</a></li>
+			<li><a href="where.html" data-ajax="false"  rel="external">오시는길</a></li>
+			<li><a href="info.html">구입정보</a></li>
+		</ul>
+		</div>
+	</div><!--헤더끝 컨텐트시작-->
+
+	<div data-role="content">
+		<div data-role="collapsible-set" data-collapsed-icon="arrow-l" data-expanded-icon="arrow-d" data-iconpos="right" data-mini="true" id="test1" data-corners="false">
+			 <div data-role="collapsible" data-mini="true">
+
+			 	<h3>기타1</h3>
+			 	<ul data-role="listview" data-inset="false">
+			 		<li><a href="menupopup.html" data-rel="dialog">기타세부1</a></li>
+			 		<li><a href="menupopup.html" data-rel="dialog">기타세부2</a></li>
+			 		<li><a href="menupopup.html" data-rel="dialog">기타세부3</a></li>
+			 	</ul>
+			 </div>
+
+			<br><br>
+
+
+		</div>
+	</div><!--컨텐트끝 푸터시작-->
+	<div data-role="footer" data-position="fixed">
+	@가을방아
+	</div>
+</div>
+</body>
+</html>

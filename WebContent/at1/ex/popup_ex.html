@@ -1,0 +1,33 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+	<script>
+		var winObject = null;
+
+		function popupWindow(){
+		var settings ='toolbar=0,directories=0,status=no,menubar=0,scrollbars=auto,resizable=no,height=200,width=200,left=0,top=0';
+		winObject = window.open("popup_ex2.html", "test2", settings);
+		}
+
+		function submitToWindow(){
+		winObject.doc-ument.all.text2.value = doc-ument.all.text1.value;
+		}
+	</script>
+</head>
+<body>
+<div data-role="page">
+	<input type=text name="text1">
+	<input type=button value="새창띄우기" on-Click="popupWindow();">
+	<input type=button value="팝업창으로전송" on-Click="submitToWindow();">
+</div>
+</body>
+</html>
+
+
+
+
+
